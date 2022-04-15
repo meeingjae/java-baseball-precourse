@@ -34,10 +34,10 @@
         * JDK의 Random(), Scanner() 사용 금지
         * JDK 8의 stream api 사용 금지
         * lambda 사용 가능
-        * camp.nextstep.edu.missionutils.console.pickNumberInRange() 사용 —> 랜덤 값 추출
+        * camp.nextstep.edu.missionutils.Randoms.pickNumberInRange() 사용 —> 랜덤 값 추출
         * camp.nextstep.edu.missionutils.Console.readLine() 사용 —> 사용자 입력
     * **Test**
-        * JUnit5 , AssertJ 사용
+        * [JUnit5](https://www.baeldung.com/parameterized-tests-junit-5) , [AssertJ 사용](https://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#exception-assertion)
 * **Test**
     * baseBall.ApplicationTest 의 2개 Test Case 성공
         * 별도 Test Case 생성 가능
