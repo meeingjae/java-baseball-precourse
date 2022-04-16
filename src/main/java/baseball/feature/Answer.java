@@ -4,13 +4,16 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.HashMap;
 
+/**
+ * 정답
+ */
 public class Answer {
 
     private static final int MIN = 1;
     private static final int MAX = 9;
     private static final int DEFAULT = 3;
 
-    private HashMap<Integer, Integer> answer;
+    private final HashMap<Integer, Integer> answer;
 
     public Answer() {
         this(DEFAULT);

@@ -3,8 +3,17 @@ package baseball.handler;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Custom Exception Handler
+ */
 public class CustomHandler {
 
+    /**
+     * 사용자 입력 값 유효성 검사
+     *
+     * @param input         사용자 입력 값
+     * @param numberOfDigit 사용자 입력 갯수
+     */
     public static void invalidCheck(String input, int numberOfDigit) {
         inputFormatCheck(input);
         duplicationCheck(input);
