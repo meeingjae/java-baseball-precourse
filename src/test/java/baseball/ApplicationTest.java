@@ -1,7 +1,6 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
@@ -10,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ApplicationTest extends NsTest {
-    @Ignore
     @Test
     void 게임종료_후_재시작() {
         assertRandomNumberInRangeTest(
@@ -22,7 +20,6 @@ class ApplicationTest extends NsTest {
         );
     }
 
-    @Ignore
     @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
@@ -33,6 +30,6 @@ class ApplicationTest extends NsTest {
 
     @Override
     public void runMain() {
-        Application.main(new String[]{});
+        Application.main(new String[] {});
     }
 }
