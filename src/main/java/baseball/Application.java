@@ -9,6 +9,7 @@ public class Application {
         while (baseBallGame.getIsContinue()) {
             baseBallGame.startGame();
             baseBallGame.gameEndCheck();
+            baseBallGame.resetGame();
         }
     }
 }
