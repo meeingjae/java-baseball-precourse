@@ -56,4 +56,20 @@ public class CustomHandlerTest {
         assertThat(exception)
                 .hasMessage("please enter 3 number");
     }
+
+    @DisplayName("CustomHandler - 입력 값에 0이 포함 된 경우")
+    @Test
+    void nonZeroCheckTest() {
+        //given:
+        String input = "012";
+        //when:
+        try {
+            CustomHandler.invalidCheck(input, NUMBER_OF_DIGIT);
+        } catch (IllegalArgumentException e) {
+            exception = e;
+        }
+        //then:
+        assertThat(exception)
+                .hasMessage("please enter non zero number");
+    }
 }
