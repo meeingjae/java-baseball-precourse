@@ -15,15 +15,12 @@ public class ReadLineTest {
     @DisplayName("사용자 입력 테스트")
     @Test
     void readLineTest() {
-
         //given:
         String inputString = "name";
         InputStream in = new ByteArrayInputStream(inputString.getBytes(StandardCharsets.UTF_8));
         System.setIn(in);
-
         //when:
         String read = readLine();
-
         //then:
         assertThat(read)
                 .isEqualTo("name");

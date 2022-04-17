@@ -15,13 +15,11 @@ public class NumberGeneratorTest {
     void generateSingleTest() {
         //given:
         NumberGenerator numberGenerator = new NumberGenerator(1, 9);
-
         //when:
         List<Integer> numberList = Arrays.asList(
                 numberGenerator.generate(),
                 numberGenerator.generate(),
                 numberGenerator.generate());
-
         //then:
         assertThat(numberList)
                 .containsAnyOf(1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -32,13 +30,11 @@ public class NumberGeneratorTest {
     void generateTrebleFigureTest() {
         //given:
         NumberGenerator numberGenerator = new NumberGenerator(100, 103);
-
         //when:
         List<Integer> numberList = Arrays.asList(
                 numberGenerator.generate(),
                 numberGenerator.generate(),
                 numberGenerator.generate());
-
         //then:
         assertThat(numberList)
                 .containsAnyOf(100, 101, 102, 103);

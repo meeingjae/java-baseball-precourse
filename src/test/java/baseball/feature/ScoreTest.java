@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ScoreTest {
-
     NumberGenerator numberGenerator = new NumberGenerator(1, 3);
     Answer answer = new Answer(numberGenerator);
     Score score;
@@ -26,11 +25,9 @@ public class ScoreTest {
     void fullStrikeTest() {
         //given:
         String input = "123";
-
         //when:
         score.calculateScore(input);
-
-        //when:
+        //then:
         assertThat(score.getStrikeCount())
                 .isEqualTo(3);
     }
@@ -40,11 +37,9 @@ public class ScoreTest {
     void ballTest() {
         //given:
         String input = "312";
-
         //when:
         score.calculateScore(input);
-
-        //when:
+        //then:
         assertThat(score.getBallCount())
                 .isEqualTo(3);
     }
@@ -54,11 +49,9 @@ public class ScoreTest {
     void ballStrikeTest() {
         //given:
         String input = "132";
-
         //when:
         score.calculateScore(input);
-
-        //when:
+        //then:
         assertThat(score.getBallCount())
                 .isEqualTo(2);
         assertThat(score.getStrikeCount())
@@ -70,11 +63,9 @@ public class ScoreTest {
     void nothingTest() {
         //given:
         String input = "456";
-
         //when:
         score.calculateScore(input);
-
-        //when:
+        //then:
         assertThat(score.getBallCount())
                 .isEqualTo(0);
         assertThat(score.getStrikeCount())

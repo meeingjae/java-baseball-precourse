@@ -16,11 +16,9 @@ public class HashMapTest {
         //given:
         Map<Integer, Integer> map = new HashMap<>();
         map.put(1, 4);
-
         //when:
         boolean key = map.containsKey(1);
         boolean value = map.containsValue(4);
-
         //then:
         assertThat(map.containsKey(1))
                 .isTrue();

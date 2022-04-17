@@ -1,7 +1,5 @@
 package baseball.feature;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 import java.util.HashMap;
 
 /**
@@ -14,7 +12,7 @@ public class Answer {
     private static final int DEFAULT = 3;
 
     private final HashMap<Integer, Integer> answer = new HashMap<>();
-    private NumberGenerator numberGenerator = new NumberGenerator(MIN,MAX);
+    private NumberGenerator numberGenerator = new NumberGenerator(MIN, MAX);
 
     /**
      * 정답의 기본 생성자 (기본 값=3)
@@ -24,9 +22,9 @@ public class Answer {
     }
 
     /**
-     * 특정 자릿수를 받아 정답 생성
+     * 특정 자리 수를 받아 정답 생성
      *
-     * @param number 정답 자릿수
+     * @param number 정답 자리 수
      */
     public Answer(int number) {
         makeAnswer(number);
