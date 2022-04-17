@@ -1,25 +1,59 @@
 package baseball.feature;
 
+/**
+ * 점수
+ */
 public class Score {
 
-    private Answer answer;
+    private final Answer answer;
     private int strikeCount;
     private int ballCount;
     private boolean isWrongAnswer = true;
 
+    /**
+     * @param answer 정답
+     */
     public Score(Answer answer) {
         this.answer = answer;
     }
 
+    /**
+     * @return 오답 여부 반환
+     */
     public boolean getIsWrongAnswer() {
         return this.isWrongAnswer;
     }
 
+    /**
+     * @return 스트라이크 카운트 반환
+     */
+    public int getStrikeCount() {
+        return this.strikeCount;
+    }
+
+    /**
+     * @return 볼 카운트 반환
+     */
+    public int getBallCount() {
+        return this.ballCount;
+    }
+
+    /**
+     * @param input 사용자 입력
+     */
     public void calculateScore(String input) {
         for (int i = 0; i < input.length(); i++) {
             calculateScore(input, i);
         }
         printScore();
+    }
+
+    /**
+     * 점수 초기화
+     */
+    public void resetScore() {
+        this.ballCount = 0;
+        this.strikeCount = 0;
     }
 
     private void calculateScore(String input, int num) {
@@ -29,16 +63,24 @@ public class Score {
     }
 
     private void plusStrikeCount(int inputNum, int num) {
-        if (answer.getAnswer().get(num).equals(inputNum)) {
+        if (isStrike(inputNum, num)) {
             strikeCount++;
         }
     }
 
     private void plusBallCount(int inputNum, int num) {
-        if (!(answer.getAnswer().get(num).equals(inputNum))
-                && answer.getAnswer().containsValue(inputNum)) {
+        if (isBall(inputNum, num)) {
             ballCount++;
         }
+    }
+
+    private boolean isStrike(int inputNum, int num) {
+        return answer.getAnswer().get(num).equals(inputNum);
+    }
+
+    private boolean isBall(int inputNum, int num) {
+        return !(answer.getAnswer().get(num).equals(inputNum))
+                && answer.getAnswer().containsValue(inputNum);
     }
 
     private void printScore() {
@@ -66,26 +108,19 @@ public class Score {
     private void isBallAndStrike() {
         if (ballCount != 0 && strikeCount != 0) {
             System.out.println(ballCount + "볼 " + strikeCount + "스트라이크");
-            resetScore();
         }
     }
 
     private void isBall() {
         if (ballCount != 0 && strikeCount == 0) {
             System.out.println(ballCount + "볼");
-            resetScore();
         }
     }
 
     private void isStrike() {
-        if (ballCount == 0 && strikeCount != 0) {
+        if (!(strikeCount == answer.getAnswer().size())
+                && ballCount == 0 && strikeCount != 0) {
             System.out.println(strikeCount + "스트라이크");
-            resetScore();
         }
-    }
-
-    private void resetScore() {
-        this.ballCount = 0;
-        this.strikeCount = 0;
     }
 }
