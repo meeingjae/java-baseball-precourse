@@ -39,7 +39,7 @@ public class Game {
         answer = new Answer(number); // 난수 생성
         boolean isWrongAnswer = true;
         while (isWrongAnswer) {
-            isWrongAnswer = progress(answer); // 게임 진행
+            isWrongAnswer = progress(answer, number); // 게임 진행
         }
     }
 
@@ -61,17 +61,17 @@ public class Game {
         this.answer = null;
     }
 
-    private boolean progress(Answer answer) {
-        String input = input();
-        CustomHandler.invalidCheck(input, NUMBER_OF_DIGIT); // 유효성 검사
+    private boolean progress(Answer answer, int number) {
+        String input = input(number);
+        CustomHandler.invalidCheck(input, number); // 유효성 검사
         Score score = new Score(answer);
         score.calculateScore(input); // 점수 계산
         score.resetScore();
         return score.getIsWrongAnswer();
     }
 
-    private String input() {
-        System.out.println("please input 3 digit of number");
+    private String input(int number) {
+        System.out.println("please input " + number + " digit of number");
         return Console.readLine();  // 사용자 입력
     }
 }

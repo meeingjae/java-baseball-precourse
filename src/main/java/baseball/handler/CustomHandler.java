@@ -18,6 +18,7 @@ public class CustomHandler {
         inputFormatCheck(input);
         duplicationCheck(input);
         numberOfInputCheck(input, numberOfDigit);
+        nonZeroCheck(input);
     }
 
     /**
@@ -57,6 +58,12 @@ public class CustomHandler {
     private static void numberOfInputCheck(String input, int numberOfDigit) {
         if (input.length() != numberOfDigit) {
             throw new IllegalArgumentException("please enter " + numberOfDigit + " number");
+        }
+    }
+
+    private static void nonZeroCheck(String input) {
+        if (input.contains("0")) {
+            throw new IllegalArgumentException("please enter non zero number");
         }
     }
 }
