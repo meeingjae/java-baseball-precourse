@@ -1,5 +1,6 @@
 package baseball.missionutil;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -11,6 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReadLineTest {
 
+    @DisplayName("사용자 입력 테스트")
     @Test
     void readLineTest() {
 
