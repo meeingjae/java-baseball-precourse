@@ -18,8 +18,8 @@ public class PickNumberInRangeTest {
         int number = pickNumberInRange(10, 20);
 
         assertThat(number)
-                .isGreaterThan(10)
-                .isLessThan(20);
+                .isGreaterThan(9)
+                .isLessThan(21);
     }
 
     @DisplayName("pickNumberInRange - 3개의 난수 생성 테스트")

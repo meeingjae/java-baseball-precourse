@@ -11,21 +11,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Junit5Test {
 
     @DisplayName("JUnit5 - Parameterized - Integer value test")
-    @ParameterizedTest(name = "isOdd Test : {index} : {0}")
+    @ParameterizedTest(name = "{displayName} - {index} : {0}")
     @ValueSource(ints = { 1, 3, 5, -3, 15, Integer.MAX_VALUE })
     void isOddTest(int number) {
         assertTrue(isOdd(number));
     }
 
     @DisplayName("JUnit5 - Parameterized - null and empty annotation test")
-    @ParameterizedTest(name = "null and empty annotation test : {index} : {0}" )
+    @ParameterizedTest(name = "{displayName} - {index} : {0}" )
     @NullAndEmptySource
     void isBlinkTest(String str) {
         assertTrue(isBlink(str));
     }
 
     @DisplayName("JUnit5 - Parameterized - enum test")
-    @ParameterizedTest(name = "enum test : {index} : {0}")
+    @ParameterizedTest(name = "{displayName} - {index} : {0}")
     @EnumSource(Sex.class)
     void enumTest(Sex sex) {
         String name = sex.name();
