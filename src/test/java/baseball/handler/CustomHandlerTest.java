@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CustomHandlerTest {
-
     final int NUMBER_OF_DIGIT = 3;
     Exception exception = new Exception();
 
@@ -15,14 +14,12 @@ public class CustomHandlerTest {
     void inputFormatCheckTest() {
         //given:
         String input = "12a";
-
         //when:
         try {
             CustomHandler.invalidCheck(input, NUMBER_OF_DIGIT);
         } catch (IllegalArgumentException e) {
             exception = e;
         }
-
         //then:
         assertThat(exception)
                 .hasMessage("please enter a number");
@@ -33,14 +30,12 @@ public class CustomHandlerTest {
     void duplicationCheckTest() {
         //given:
         String input = "122";
-
         //when:
         try {
             CustomHandler.invalidCheck(input, NUMBER_OF_DIGIT);
         } catch (IllegalArgumentException e) {
             exception = e;
         }
-
         //then:
         assertThat(exception)
                 .hasMessage("please enter different numbers");
@@ -51,14 +46,12 @@ public class CustomHandlerTest {
     void numberOfInputCheckTest() {
         //given:
         String input = "12345";
-
         //when:
         try {
             CustomHandler.invalidCheck(input, NUMBER_OF_DIGIT);
         } catch (IllegalArgumentException e) {
             exception = e;
         }
-
         //then:
         assertThat(exception)
                 .hasMessage("please enter 3 number");

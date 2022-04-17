@@ -19,9 +19,13 @@ public class AssertjTest {
     @DisplayName("AssertJ - object test")
     @Test
     void objectTest() {
-        Person a = new Person("c", 29L);
-        Person b = new Person("c", 29L);
-
+        //given:
+        Person a;
+        Person b;
+        //when:
+        a = new Person("c", 29L);
+        b = new Person("c", 29L);
+        //then:
         assertThat(a).isEqualToComparingFieldByFieldRecursively(b);
     }
 
@@ -63,8 +67,11 @@ public class AssertjTest {
     @DisplayName("AssertJ - character test")
     @Test
     void characterTest() {
-        char c = 'b';
-
+        //given:
+        char c;
+        //when:
+        c = 'b';
+        //then:
         assertThat(c)
                 .isNotEqualTo('a')
                 .isGreaterThan('a')
@@ -90,8 +97,9 @@ public class AssertjTest {
     @DisplayName("AssertJ - Map test")
     @Test
     void mapTest() {
+        //when:
         map.put(2L, "A");
-
+        //then:
         assertThat(map)
                 .isNotEmpty()
                 .containsKey(2L)

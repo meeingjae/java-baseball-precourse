@@ -18,7 +18,7 @@ public class Junit5Test {
     }
 
     @DisplayName("JUnit5 - Parameterized - null and empty annotation test")
-    @ParameterizedTest(name = "{displayName} - {index} : {0}" )
+    @ParameterizedTest(name = "{displayName} - {index} : {0}")
     @NullAndEmptySource
     void isBlinkTest(String str) {
         assertTrue(isBlink(str));
@@ -28,7 +28,11 @@ public class Junit5Test {
     @ParameterizedTest(name = "{displayName} - {index} : {0}")
     @EnumSource(Sex.class)
     void enumTest(Sex sex) {
-        String name = sex.name();
+        //given:
+        String name;
+        //when:
+        name = sex.name();
+        //then:
         assertTrue(name.equals("MALE") || name.equals("FEMALE"));
     }
 
