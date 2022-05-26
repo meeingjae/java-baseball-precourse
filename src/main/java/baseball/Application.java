@@ -1,7 +1,15 @@
 package baseball;
 
+import baseball.feature.Game;
+
 public class Application {
+
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        Game baseBallGame = new Game();
+        while (baseBallGame.getIsContinue()) {
+            baseBallGame.startGame();
+            baseBallGame.gameEndCheck();
+            baseBallGame.resetGame();
+        }
     }
 }
