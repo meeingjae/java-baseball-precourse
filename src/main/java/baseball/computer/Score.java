@@ -12,4 +12,8 @@ public class Score {
     public Score() {
         this.score = Randoms.pickNumberInRange(MIN, MAX);
     }
+
+    public Score(int score) {
+        this.score = score;
+    }
 }
