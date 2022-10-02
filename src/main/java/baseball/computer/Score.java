@@ -1,19 +1,25 @@
 package baseball.computer;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Score {
 
-    private final int MIN = 1;
-    private final int MAX = 9;
-
+    private final int position;
     private final int score;
 
-    public Score() {
-        this.score = Randoms.pickNumberInRange(MIN, MAX);
+    public Score(int score, int position) {
+        this.score = score;
+        this.position = position;
     }
 
-    public Score(int score) {
-        this.score = score;
+    public int getScore() {
+        return this.score;
+    }
+
+    public boolean equals(Score score) {
+        return this.position == score.position
+                && this.score == score.score;
+    }
+
+    public boolean equalsScore(int score) {
+        return this.score == score;
     }
 }
